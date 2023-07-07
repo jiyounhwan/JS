@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <button type="button" onclick="game(1)"><img src="https://t1.daumcdn.net/cafeattach/1Y4ZK/4d615df1eb9624b10c7507dbdc84347824c9b944" width="200" height="200"></button>
+        <button type="button" onclick="game(2)"><img src="https://mblogthumb-phinf.pstatic.net/MjAxNzA0MjhfMTg5/MDAxNDkzMzc0MzAyNjA5.mEmZxHgKebKTLPT7WlmYWIvsCr8IFMQfDrj3se0H6nUg.A7r1CS7XoqawsRXRqKmp41buT_edfCGxKTx0Gg6UfGog.GIF.bamstyle/IMG_1718.GIF?type=w800" width="200" height="200"></button>
+        <button type="button" onclick="game(3)"><img src="https://i.pinimg.com/originals/53/e7/19/53e7199af6a0369df804b4b2c6d923d8.gif" width="200" height="200"></button>
+        <script>
+            var com = Math.floor(Math.random()*3)+1;
+            function game(saram){
+                if(saram==com){
+                    document.write("<h1>비겼습니다.</h1>");
+                }
+                else if((saram == 1 && com ==2)||(saram==2 && com==3)||(saram==3 && com==1)){
+                    document.write("<h1>이겼습니다.</h1>");
+                }
+                else{
+                    document.write("<h1>졌습니다.</h1>");
+                }
+            }
+        </script>
+    </body>
+</body>
+</html>
