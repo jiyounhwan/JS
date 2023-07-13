@@ -96,33 +96,26 @@
             }            
         }
         function on_btn_total_commit(){
-            sum = (1500 * aa_input.value)+(5000 * latte_input.value)+(5200 * bubbletea_input.value)+(5500 * Cappuccino_input.value)
-            +(6000 * lemoneideu_input.value)+(6800 * banillalatte_input.value)+(90000 * coldbrew_input.value)+(100000 * Espresso_input.value);
+            sum = (1500 * aa_input.value)+(1500 * latte_input.value);
             com = sum
             comma = com.toLocaleString('ko-KR');
             alert("총 가격은 "+comma+"원 입니다.");
-            aa_input.value='';
-            latte_input.value='';
-            bubbletea_input.value='';
-            Cappuccino_input.value='';
-            lemoneideu_input.value='';
-            banillalatte_input.value='';
-            coldbrew_input.value='';
-            Espresso_input.value='';
+            aa_input.value='', latte_input.value='';
         }
         function on_btn_set_clear(){
             location.reload();
         }
         latte_input = document.getElementById("latteinput");
         latte_input.value = 0;
-        document.getElementById("latte_plus").addEventListener('click',on_latte_plus);
-        document.getElementById("latte_minus").addEventListener('click',on_latte_minus);
+        document.getElementById("latteplus").addEventListener('click',on_latteplus);
+        document.getElementById("latteminus").addEventListener('click',on_latteminus);
+        document.getElementById("btn_total_commit").addEventListener('click',on_btn_total_commit);
+        document.getElementById("btn_set_clear").addEventListener('click',on_btn_set_clear);
 
-
-        function on_latte_plus(){
-            latte_input.value++;
+        function on_latteplus(){
+            lattea_input.value++;
         }
-        function on_latte_minus(){
+        function on_latteminus(){
             if(latte_input.value>0){
                 latte_input.value--;
             }            
@@ -131,107 +124,6 @@
         function on_btn_set_clear(){
             location.reload();
         }
-        
-        bubbletea_input = document.getElementById("bubbleteainput");
-        bubbletea_input.value = 0;
-        document.getElementById("bubbletea_plus").addEventListener('click',on_bubbletea_plus);
-        document.getElementById("bubbletea_minus").addEventListener('click',on_bubbletea_minus);
-
-        function on_bubbletea_plus(){
-            bubbletea_input.value++;
-        }
-        function on_bubbletea_minus(){
-            if(bubbletea_input.value>0){
-                bubbletea_input.value--;
-            }            
-        }
-        function on_btn_set_clear(){
-            location.reload();
-        }
-        Cappuccino_input = document.getElementById("Cappuccinoinput");
-        Cappuccino_input.value = 0;
-        document.getElementById("Cappuccino_plus").addEventListener('click',on_Cappuccino_plus);
-        document.getElementById("Cappuccino_minus").addEventListener('click',on_Cappuccino_minus);
-
-        
-        function on_Cappuccino_plus(){
-            Cappuccino_input.value++;
-        }
-        function on_Cappuccino_minus(){
-            if(Cappuccino_input.value>0){
-                Cappuccino_input.value--;
-            }            
-        }
-        function on_btn_set_clear(){
-            location.reload();
-        }
-        lemoneideu_input = document.getElementById("lemoneideuinput");
-        lemoneideu_input.value = 0;
-        document.getElementById("lemoneideu_plus").addEventListener('click',on_lemoneideu_plus);
-        document.getElementById("lemoneideu_minus").addEventListener('click',on_lemoneideu_minus);
-
-        function on_lemoneideu_plus(){
-            lemoneideu_input.value++;
-        }
-        function on_lemoneideu_minus(){
-            if(lemoneideu_input.value>0){
-                lemoneideu_input.value--;
-            }            
-        }
-        function on_btn_set_clear(){
-            location.reload();
-        }
-        banillalatte_input = document.getElementById("banillalatteinput");
-        banillalatte_input.value = 0;
-        document.getElementById("banillalatte_plus").addEventListener('click',on_banillalatte_plus);
-        document.getElementById("banillalatte_minus").addEventListener('click',on_banillalatte_minus);
-
-
-        function on_banillalatte_plus(){
-            banillalatte_input.value++;
-        }
-        function on_banillalatte_minus(){
-            if(banillalatte_input.value > 0){
-                banillalatte_input.value--;
-            }            
-        }
-        function on_btn_set_clear(){
-            location.reload();
-        }
-        coldbrew_input = document.getElementById("coldbrewinput");
-        coldbrew_input.value = 0;
-        document.getElementById("coldbrew_plus").addEventListener('click',on_coldbrew_plus);
-        document.getElementById("coldbrew_minus").addEventListener('click',on_coldbrew_minus);
-
-
-        function on_coldbrew_plus(){
-            coldbrew_input.value++;
-        }
-        function on_coldbrew_minus(){
-            if(coldbrew_input.value>0){
-                coldbrew_input.value--;
-            }            
-        }
-        function on_btn_set_clear(){
-            location.reload();
-        }
-        Espresso_input = document.getElementById("Espressoinput");
-        Espresso_input.value = 0;
-        document.getElementById("Espresso_plus").addEventListener('click',on_Espresso_plus);
-        document.getElementById("Espresso_minus").addEventListener('click',on_Espresso_minus);
-
-        function on_Espresso_plus(){
-            Espresso_input.value++;
-        }
-        function on_Espresso_minus(){
-            if(Espresso_input.value>0){
-                Espresso_input.value--;
-            }            
-        }
-        function on_btn_set_clear(){
-            location.reload();
-        }
-
     </script>
 </body>
 </html>
