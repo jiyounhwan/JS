@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopping.css"> 
+    <title>PET BOUTIQUE</title>  
+</head>
+<style>
+.main_img{
+    width: auto;
+    height: auto;
+    max-width: 800px;
+    max-height: 500px;
+
+}    
+
+</style>
+<body>
+    <header>
+    <div class="header">
+        <shop class="navbar">
+            <div class="shop__logo">
+                <i class="fab fa-accusoft"></i>
+                <i class="fa-solid fa-user"></i>      
+                <a href="">PET BOUTIQUE</a>
+            </div>
+          
+            <ul class="navbar__menu">
+                <li><a href="">Login</a></li>
+                <li><a href="">Join</a></li>
+                <li><a href="">장바구니</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+    
+            <a href="#" class="navbar__toggleBtn">
+                <i class="fas fa-bars"></i>
+            </a>            
+        </nav>
+     </div>
+    </header>
+
+    <div class="top img">
+        <img class='main_img' src="KakaoTalk_20230717_140449860.png">        
+    </div>
+
+
+    <div class = "middlebar"> 
+        <nav class="middle__bar">          
+            <ul class="middle__menu">
+                <li><a href="#">사료</a></li>
+                <li><a href="#">이동장</a></li>
+                <li><a href="#">하우스</a></li>            
+             </ul>
+        </nav>
+    </div>
+    <nav id="gnb">
+        <button type="button" id="menu_open"><img src="10.png" alt="HOME">사료</button>
+        <ul id="gnb_1dul" style="display: none;">
+                    <li class="gnb_1dli" style="z-index:998">
+                <a href="10.png" class="gnb_1da gnb_1dam">사료</a>
+                <ul class="gnb_2dul" style="z-index:998">                
+                    <li class="gnb_2dli"><a href="10.png" class="gnb_2da">브랜드1</a></li>
+                                   
+
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+
+    </div>
+   
+
+    <div> Bast 상품 </div>
+    <div>  //가로로 정렬, 많이 판매된 기준
+        <img class="" alt="베스트 이미지1"> 
+          상품명
+          가격
+        <img class="" alt="베스트 이미지2">
+        상품명
+        가격
+        <img class="" alt="베스트 이미지3">
+        상품명
+        가격
+        <img class="" alt="베스트 이미지3">
+        상품명
+        가격
+      </div>
+    <div>
+    고객센터  // QNA(링크)   //회사이름 사업자명, 사업자번호
+    
+    </div>
+
+ <script>
+    const toggleBtn = document.querySelector(".navbar__toggleBtn");
+    const menu = document.querySelector(".navbar__menu");
+    const icons = document.querySelector(".navbar__icons");
+
+    toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    icons.classList.toggle("active");
+    });
+    </script>
+    
+</body>
+</html>

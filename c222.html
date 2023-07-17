@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="menuButton">메뉴</button>
+    <div id="menuContent">
+      <!-- 메뉴 내용 -->
+    </div>
+  
+    <script>
+      // 메뉴 버튼 요소 가져오기
+      const menuButton = document.getElementById('menuButton');
+      // 메뉴 내용 요소 가져오기
+      const menuContent = document.getElementById('menuContent');
+  
+      // 메뉴 버튼 클릭 시 이벤트 처리
+      menuButton.addEventListener('click', function() {
+        if (menuContent.style.display === 'none') {
+          menuContent.style.display = 'block'; // 메뉴 내용 보이기
+        } else {
+          menuContent.style.display = 'none'; // 메뉴 내용 숨기기
+        }
+      });
+    </script>
+  </body>
+</html>

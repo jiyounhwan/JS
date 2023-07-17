@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>pet Boutique</title>
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/css/default_shop.css?ver=171222">
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/skin/shop/basic/style.css?ver=171222">
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/skin/popular/basic/style.css?ver=171222">
+<!--[if lte IE 8]>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://www.mall3.dwebs1.kr";
+var g5_bbs_url   = "http://www.mall3.dwebs1.kr/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="http://www.mall3.dwebs1.kr/js/jquery-1.8.3.min.js"></script>
+<script src="http://www.mall3.dwebs1.kr/js/jquery.shop.menu.js?ver=171222"></script>
+<script src="http://www.mall3.dwebs1.kr/js/common.js?ver=171222"></script>
+<script src="http://www.mall3.dwebs1.kr/js/wrest.js?ver=171222"></script>
+<script src="http://www.mall3.dwebs1.kr/js/placeholders.min.js"></script>
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/js/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/css/font.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+
+<script src="http://www.mall3.dwebs1.kr/js/jquery.bxslider.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+    var slider = $('#top_banner').show().bxSlider({
+        // mode: 'horizontal',
+        mode: 'vertical',
+        auto: true,
+        speed:800,
+        pager:false,
+        controls:true,
+        nextSelector: '#slider-next',
+        prevSelector: '#slider-prev',
+        prevText: '<button type="button" data-role="none" class="bxslider_btn_prev" aria-label="Prev" role="button" style="display: block;">prev</button>',
+        nextText: '<button type="button" data-role="none" class="bxslider_btn_next" aria-label="Next" role="button" style="display: block;">next</button>',
+        onSlideAfter : function(){
+            slider.startAuto();
+        }
+    });
+});
+
+</script>
+<!-- 상단 시작  -->
+<div id="hd">
+    <h1 id="hd_h1">HEELO DOGGY</h1>
+
+    <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+
+    
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 -->
+    <div id="tnb">
+        <div class="tnb_box">
+            <div class="header_sch_wrap">
+                <div id="hd_sch">
+                    <form name="frmsearch1" action="http://www.mall3.dwebs1.kr/shop/search.php" onsubmit="return search_submit(this);">
+
+                        <input type="text" name="q" value="" id="sch_str" required>
+                        <button type="submit" id="sch_submit"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+                    </form>
+                    <script>
+                    function search_submit(f) {
+                        if (f.q.value.length < 2) {
+                            alert("검색어는 두글자 이상 입력하십시오.");
+                            f.q.select();
+                            f.q.focus();
+                            return false;
+                        }
+                        return true;
+                    }
+                    </script>
+                </div>
+            </div>
+            <div class="tnb_ul_box">
+
+                <ul>
+                                        <li class="tnb_cart"><a href="http://www.mall3.dwebs1.kr/shop/cart.php"><img src="http://www.mall3.dwebs1.kr/theme/dog/images/tnb_cart_icon.png" alt="HOME">장바구니</a></li>
+                    <li><a href="http://www.mall3.dwebs1.kr/shop/mypage.php"><img src="http://www.mall3.dwebs1.kr/theme/dog/images/tnb_home_icon.png" alt="HOME">마이페이지</a></li>
+                                        <li>
+                        <a href="http://www.mall3.dwebs1.kr/bbs/register.php"><img src="http://www.mall3.dwebs1.kr/theme/dog/images/tnb_join_icon.png" alt="HOME">회원가입</a>
+                        <div class="join_point">+2,000 POINT</div>
+                    </li>
+                    <li><a href="http://www.mall3.dwebs1.kr/bbs/login.php?url=%2F"><img src="http://www.mall3.dwebs1.kr/theme/dog/images/tnb_login_icon.png" alt="HOME"><b>로그인</b></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="hd_wrapper">
+        <div id="logo"><a href="http://www.mall3.dwebs1.kr/shop/"><img src="http://www.mall3.dwebs1.kr/theme/dog/images/logo_top.png" alt="HEELO DOGGY"></a></div>
+    </div>
+
+    <div id="hd_menu_wrap">
+        <div class="hd_menu">
+            <div id="head_category">
+                
+<!-- 쇼핑몰 카테고리 시작 { -->
+<nav id="gnb">
+    <h2>쇼핑몰 카테고리</h2>
+    <button type="button" id="menu_open"><img src="http://www.mall3.dwebs1.kr/theme/dog/images/menu_open_icon.png" alt="HOME">ALL</button>
+    <ul id="gnb_1dul" style="display: none;">
+                <li class="gnb_1dli" style="z-index:998">
+            <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=10" class="gnb_1da gnb_1dam">브랜드별사료</a>
+            <ul class="gnb_2dul" style="z-index:998">                <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1010" class="gnb_2da">브랜드1</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1020" class="gnb_2da">브랜드2</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1030" class="gnb_2da">브랜드3</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1040" class="gnb_2da">브랜드4</a></li>
+            </ul>        </li>
+                <li class="gnb_1dli" style="z-index:997">
+            <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=20" class="gnb_1da gnb_1dam">종류별간식</a>
+            <ul class="gnb_2dul" style="z-index:997">                <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2010" class="gnb_2da">육포/사사미간식</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2020" class="gnb_2da">육포/져키간식</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2030" class="gnb_2da">명품수제간식</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2040" class="gnb_2da">강아지 덴탈껌</a></li>
+            </ul>        </li>
+                <li class="gnb_1dli" style="z-index:996">
+            <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=30" class="gnb_1da gnb_1dam">장난감</a>
+            <ul class="gnb_2dul" style="z-index:996">                <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3010" class="gnb_2da">실타래 장난감</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3020" class="gnb_2da">노즈워크 매트</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3030" class="gnb_2da">봉제장난감</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3040" class="gnb_2da">공모양/원반</a></li>
+            </ul>        </li>
+                <li class="gnb_1dli" style="z-index:995">
+            <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=40" class="gnb_1da gnb_1dam">목욕용품</a>
+            <ul class="gnb_2dul" style="z-index:995">                <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4010" class="gnb_2da">눈 관리용품</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4020" class="gnb_2da">귀 관리용품</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4030" class="gnb_2da">구강 관리용품</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4040" class="gnb_2da">샴푸/린스</a></li>
+            </ul>        </li>
+                <li class="gnb_1dli" style="z-index:994">
+            <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=50" class="gnb_1da gnb_1dam">위생용품</a>
+            <ul class="gnb_2dul" style="z-index:994">                <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5010" class="gnb_2da">배변패드</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5020" class="gnb_2da">배변판</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5030" class="gnb_2da">기저귀/팬티</a></li>
+                            <li class="gnb_2dli"><a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5040" class="gnb_2da">탈취제/소독제</a></li>
+            </ul>        </li>
+            </ul>
+</nav>
+<!-- } 쇼핑몰 카테고리 끝 -->
+                <div id="category">
+    <div class="close_btn_box">
+        <button type="button" class="close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="ct_wr">
+        <ul class="cate">
+            <li class="cate_li_1">
+                <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=10" class="cate_li_1_a">브랜드별사료</a>
+                <ul class="sub_cate sub_cate1">
+                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1010">브랜드1</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1020">브랜드2</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1030">브랜드3</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=1040">브랜드4</a>
+                    </li>
+                </ul>
+            </li>
+                    <li class="cate_li_1">
+                <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=20" class="cate_li_1_a">종류별간식</a>
+                <ul class="sub_cate sub_cate1">
+                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2010">육포/사사미간식</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2020">육포/져키간식</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2030">명품수제간식</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=2040">강아지 덴탈껌</a>
+                    </li>
+                </ul>
+            </li>
+                    <li class="cate_li_1">
+                <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=30" class="cate_li_1_a">장난감</a>
+                <ul class="sub_cate sub_cate1">
+                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3010">실타래 장난감</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3020">노즈워크 매트</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3030">봉제장난감</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=3040">공모양/원반</a>
+                    </li>
+                </ul>
+            </li>
+                    <li class="cate_li_1">
+                <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=40" class="cate_li_1_a">목욕용품</a>
+                <ul class="sub_cate sub_cate1">
+                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4010">눈 관리용품</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4020">귀 관리용품</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4030">구강 관리용품</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=4040">샴푸/린스</a>
+                    </li>
+                </ul>
+            </li>
+                    <li class="cate_li_1">
+                <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=50" class="cate_li_1_a">위생용품</a>
+                <ul class="sub_cate sub_cate1">
+                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5010">배변패드</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5020">배변판</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5030">기저귀/팬티</a>
+                    </li>
+                                    <li class="cate_li_2">
+                        <a href="http://www.mall3.dwebs1.kr/shop/list.php?ca_id=5040">탈취제/소독제</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+$(function (){
+    var $category = $("#category");
+
+    $("#menu_open").on("click", function() {
+        $category.css("display","block");
+    });
+
+    $("#category .close_btn").on("click", function(){
+        $category.css("display","none");
+    });
+});
+$(document).mouseup(function (e){
+   var container = $("#category");
+   if( container.has(e.target).length === 0)
+   container.hide();
+});
+</script>
+            </div>
+            <div class="hd_menu_box2">
+                <ul>
+                                            <li class="parent_menu">
+                            <a href="/shop/list.php?ca_id=10" target="_self" class="" >브랜드별사료</a>
+
+                            
+                        </li>
+                                            <li class="parent_menu">
+                            <a href="/shop/list.php?ca_id=20" target="_self" class="" >종류별간식</a>
+
+                            
+                        </li>
+                                            <li class="parent_menu">
+                            <a href="/shop/list.php?ca_id=30" target="_self" class="" >장난감</a>
+
+                            
+                        </li>
+                                            <li class="parent_menu">
+                            <a href="/shop/list.php?ca_id=40" target="_self" class="" >목욕용품</a>
+
+                            
+                        </li>
+                                            <li class="parent_menu">
+                            <a href="/shop/list.php?ca_id=50" target="_self" class="" >위생용품</a>
+
+                            
+                        </li>
+                                    </ul>
+            </div>
+            <div class="best_search">
+                
+<!-- 인기검색어 시작 { -->
+<section id="popular">
+    <div>
+        <div class="popular_inner">
+            <ul id="popular_slider">
+                        </ul>
+        </div>
+    </div>
+</section>
+<!-- } 인기검색어 끝 -->
+<script>
+$(document).ready(function(){
+    var slider = $('#popular_slider').show().bxSlider({
+        // mode: 'horizontal',
+        mode: 'vertical',
+        auto: true,
+        speed:800,
+        pager:false,
+        controls:true,
+        nextSelector: '#slider-next',
+        prevSelector: '#slider-prev',
+        prevText: '<button type="button" data-role="none" class="bxslider_btn_prev" aria-label="Prev" role="button" style="display: block;">prev</button>',
+        nextText: '<button type="button" data-role="none" class="bxslider_btn_next" aria-label="Next" role="button" style="display: block;">next</button>',
+        onSlideAfter : function(){
+            slider.startAuto();
+        }
+    });
+});
+
+</script>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script>
+$(function (){
+
+    $(".btn_sidemenu_cl").on("click", function() {
+        $(".side_menu_wr").toggle();
+        $(".fa-outdent").toggleClass("fa-indent")
+    });
+
+    $(".btn_side_shop").on("click", function() {
+        $(this).next(".op_area").slideToggle(300).siblings(".op_area").slideUp();
+    });
+});
+</script>
+
+<div id="wrapper-main">
+<!-- <div id="wrapper"> -->
+<!-- } 상단 끝 -->
+    <!-- 콘텐츠 시작 { -->
+    <div id="conainer-main">
+        
+        <!-- } 글자크기 조정 display:none 되어 있음 끝 -->
+
+<!-- 메인이미지 시작 { -->
+
+<div id="main_bn">
+<ul class="slide-wrap">
+<li class="bn_first">
+<img src="http://www.mall3.dwebs1.kr/data/banner/1" width="1920" alt=""></li>
+</ul>
+<div id="bx_pager" class="bx_pager">
+    <ul><li> <a data-slide-index="0" href=""></a></li>
+</ul>
+    </div>
+</div>
+
+<script>
+jQuery(function($){
+    var slider = $('.slide-wrap').show().bxSlider({
+        speed:800,
+        pagerCustom: '#bx_pager',
+        auto: true,
+        useCSS : false,
+        onSlideAfter : function(){
+            slider.startAuto();
+        }
+    });
+});
+</script>
+
+<!-- } 메인이미지 끝 -->
+
+<div class="c1_wrap">
+    <div id="sev">
+    <ul id="event_slide">
+    <li class="ev_li"><div class="ev_li_wr"><a href="http://www.mall3.dwebs1.kr/shop/event.php?ev_id=1567674316" class="sev_img "><img src="http://www.mall3.dwebs1.kr/data/event/1567674316_m" alt="봄맞이 할인이벤트4"></a>
+</div></li>
+<li class="ev_li"><div class="ev_li_wr"><a href="http://www.mall3.dwebs1.kr/shop/event.php?ev_id=1567674287" class="sev_img "><img src="http://www.mall3.dwebs1.kr/data/event/1567674287_m" alt="봄맞이 할인이벤트3"></a>
+</div></li>
+<li class="ev_li"><div class="ev_li_wr"><a href="http://www.mall3.dwebs1.kr/shop/event.php?ev_id=1567674244" class="sev_img "><img src="http://www.mall3.dwebs1.kr/data/event/1567674244_m" alt="봄맞이 할인이벤트2"></a>
+</div></li>
+<li class="ev_li"><div class="ev_li_wr"><a href="http://www.mall3.dwebs1.kr/shop/event.php?ev_id=1567672344" class="sev_img "><img src="http://www.mall3.dwebs1.kr/data/event/1567672344_m" alt="봄맞이 할인이벤트"></a>
+</div></li>
+    </ul>
+</div>
+
+<div class="pager2_wrap">
+    <div id="event_banner_pager" class="bxsliderbanner2_pager">
+                    <a data-slide-index="0" href="" class=""></a>
+                        <a data-slide-index="1" href="" class=""></a>
+                        <a data-slide-index="2" href="" class=""></a>
+                        <a data-slide-index="3" href="" class=""></a>
+                </div>
+</div>
+<script>
+$(document).ready(function(){
+    var event_slide = $('#event_slide').bxSlider({
+        mode: 'horizontal',
+        // mode: 'vertical',
+        auto: true,
+        speed:800,
+        pager:true,
+        controls:false,
+        minSlides: 1,
+        maxSlides: 1,
+        moveSlides: 1,
+        slideMargin: 20,
+        pagerCustom: '#event_banner_pager',
+        slideWidth:'1280px',
+        autoHover: true,
+        pause: 3000,
+        prevText: '<button type="button" data-role="none" class="best_bt1" aria-label="Prev" role="button" style="display: block;"></button>',
+        nextText: '<button type="button" data-role="none" class="best_bt2" aria-label="Next" role="button" style="display: block;"></button>',
+        onSlideAfter : function(){
+            event_slide.startAuto();
+        }
+    });
+});
+
+</script>
+  
+            </div>
+        </div>
+    </div>
+    <div class="row contents1 contents1_2">
+        <div class="c1_script_box">
+            <h1><span>혼자서도 즐거운시간 보내기!</span><br />강아지 인기장난감 할인이벤트</h1>
+            <p>이번달 신상장난감이 30% ~ 60% 빅세일을 진행하고있습니다.<br />
+                단! 일주일만 진행하는 빅이벤트! 지금 구경하러오세요!</p>
+            <div class="c1_btn">
+                <a href="#" class="c1_btn_a2"></a>
+                <a href="#" class="c1_btn_a1">구매하러가기</a>
+            </div>
+        </div>
+        <div class="c1_img_box">
+            <img src="http://www.mall3.dwebs1.kr/theme/dog/images/c1_img2.jpg" alt="" />
+        </div>
+    </div>
+</div>
+
+<!-- 베스트상품 시작 { -->
+<section class="sct_wrap c2_wrap">
+    <header>
+        <div class="c_title_img_box">
+            <img src="http://www.mall3.dwebs1.kr/theme/dog/images/c2_icon.png" alt="" />
+        </div>
+        <h1 class="c_title">BEST PRODUCT</h1>
+    </header>
+    <div class="c2_article_wrap">
+        <div class="c2_article">
+            <div class="best_bt1_wrap">
+
+</div>
+<div class="best_bt2_wrap">
+
+</div>
+
+<!-- 상품진열 10 시작 { -->
+<ul id="slider4" class="sct2 sct_best">
+<li class="sct_li sct_clear" style="width:255px">
+<div class="sct_img">
+<img src="http://www.mall3.dwebs1.kr/data/item/1567742975/thumb-best_pd4_255x255.jpg" width="255" height="255" alt="프리미엄 다이어트 사료">
+
+        <div class="sct_sns">
+            <div class="sns_line"></div>
+            <p class="h_title">프리미엄 다이어트 사료</p>
+            <span style="text-decoration:line-through;" class="h_cprice">17,900원</span></br>
+            <p class="h_price">15,900원</p>
+        </div>
+        </div>
+</a>
+<div class="sct_txt"><a href="http://www.mall3.dwebs1.kr/shop/item.php?it_id=1567742975">
+프리미엄 다이어트 사료
+</a></div>
+</li>
+<li class="sct_li " style="width:255px">
+<a href="http://www.mall3.dwebs1.kr/shop/item.php?it_id=1567742866">
+<div class="sct_img">
+<img src="http://www.mall3.dwebs1.kr/data/item/1567742866/thumb-best_pd3_255x255.jpg" width="255" height="255" alt="치킨&소고기 캔">
+
+        <div class="sct_sns">
+            <div class="sns_line"></div>
+            <p class="h_title">치킨&소고기 캔</p>
+            <span style="text-decoration:line-through;" class="h_cprice">7,900원</span></br>
+            <p class="h_price">5,900원</p>
+        </div>
+        </div>
+</a>
+<div class="sct_txt"><a href="http://www.mall3.dwebs1.kr/shop/item.php?it_id=1567742866">
+치킨&소고기 캔
+</a></div>
+</li>
+<li class="sct_li " style="width:255px">
+<a href="http://www.mall3.dwebs1.kr/shop/item.php?it_id=1567742729">
+<div class="sct_img">
+<img src="http://www.mall3.dwebs1.kr/data/item/1567742729/thumb-best_pd2_255x255.jpg" width="255" height="255" alt="로얄프리미엄 사료">
+
+        <div class="sct_sns">
+            <div class="sns_line"></div>
+            <p class="h_title">로얄프리미엄 사료</p>
+            <span style="text-decoration:line-through;" class="h_cprice">13,000원</span></br>
+            <p class="h_price">11,000원</p>
+        </div>
+        </div>
+</a>
+<div class="sct_txt"><a href="http://www.mall3.dwebs1.kr/shop/item.php?it_id=1567742729">
+로얄프리미엄 사료
+</a></div>
+</li>
+<li class="sct_li sct_last" style="width:255px">
+<a href="http://www.mall3.dwebs1.kr/shop/item.php?it_id=1567742415">
+<div class="sct_img">
+<img src="http://www.mall3.dwebs1.kr/data/item/1567742415/thumb-best_pd1_255x255.jpg" width="255" height="255" alt="소형견 전용샴푸 + 컨디셔너">
+
+        <div class="sct_sns">
+            <div class="sns_line"></div>
+            <p class="h_title">소형견 전용샴푸 + 컨디셔너</p>
+            <span style="text-decoration:line-through;" class="h_cprice">25,000원</span></br>
+            <p class="h_price">15,000원</p>
+        </div>
+        </div>
+</a>
+<div class="sct_txt"><a href="http://www.mall3.dwebs1.kr/shop/item.php?it_id=1567742415">
+소형견 전용샴푸 + 컨디셔너
+</a></div>
+</li>
+</ul>
+<!-- } 상품진열 10 끝 -->
+
+
+<script>
+$(document).ready(function(){
+    var slider4 = $('#slider4').bxSlider({
+        mode: 'horizontal',
+        // mode: 'vertical',
+        auto: true,
+        speed:800,
+        pager:false,
+        controls:true,
+        minSlides: 4,
+        maxSlides: 4,
+        moveSlides: 1,
+        slideMargin: 30,
+        slideWidth:'255px',
+        autoHover: true,
+        pause: 3000,
+        prevText: '<button type="button" data-role="none" class="best_bt1" aria-label="Prev" role="button" style="display: block;"></button>',
+        nextText: '<button type="button" data-role="none" class="best_bt2" aria-label="Next" role="button" style="display: block;"></button>',
+        onSlideAfter : function(){
+            slider4.startAuto();
+        }
+    });
+});
+
+</script>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>pet Boutique</title>
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/css/default_shop.css?ver=171222">
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/skin/shop/basic/style.css?ver=171222">
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/skin/popular/basic/style.css?ver=171222">
+<!--[if lte IE 8]>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://www.mall3.dwebs1.kr";
+var g5_bbs_url   = "http://www.mall3.dwebs1.kr/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="http://www.mall3.dwebs1.kr/js/jquery-1.8.3.min.js"></script>
+<script src="http://www.mall3.dwebs1.kr/js/jquery.shop.menu.js?ver=171222"></script>
+<script src="http://www.mall3.dwebs1.kr/js/common.js?ver=171222"></script>
+<script src="http://www.mall3.dwebs1.kr/js/wrest.js?ver=171222"></script>
+<script src="http://www.mall3.dwebs1.kr/js/placeholders.min.js"></script>
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/js/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.mall3.dwebs1.kr/theme/dog/css/font.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+
+<script src="http://www.mall3.dwebs1.kr/js/jquery.bxslider.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+    var slider = $('#top_banner').show().bxSlider({
+        // mode: 'horizontal',
+        mode: 'vertical',
+        auto: true,
+        speed:800,
+        pager:false,
+        controls:true,
+        nextSelector: '#slider-next',
+        prevSelector: '#slider-prev',
+        prevText: '<button type="button" data-role="none" class="bxslider_btn_prev" aria-label="Prev" role="button" style="display: block;">prev</button>',
+        nextText: '<button type="button" data-role="none" class="bxslider_btn_next" aria-label="Next" role="button" style="display: block;">next</button>',
+        onSlideAfter : function(){
+            slider.startAuto();
+        }
+    });
+});
+
+</script>
+<!-- 상단 시작  -->
+<div id="hd">
+    <h1 id="hd_h1">HEELO DOGGY</h1>
+
+    <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+
+    
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
