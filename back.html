@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="TheBody">
+    <button onclick="ChangebgColor();">배경색 무작위로 바꾸기</button><br>
+    <button onclick="StartAutoChange();">배경색 자동으로 바꾸기 시작</button>
+    <button onclick="StopAutoChange();">배경색 자동으로 바꾸기 정지</button>
+    <script>
+        var TheBody = document.getElementById('TheBody');
+        var play;
+        var isAutoChange = false;
+
+        function ChangebgColor() {
+            let [r, g, b] = randomRgb();
+            TheBody.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function StartAutoChange() {
+            if (!isAutoChange) {
+                isAutoChange = true;
+                play = setInterval(function () {
+                    let [r, g, b] = randomRgb();
+                    TheBody.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                }, 0);
+            }
+        }
+
+        function StopAutoChange() {
+            if (isAutoChange) {
+                clearInterval(play);
+                isAutoChange = false;
+            }
+        }
+
+        const randomRgb = function () {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            return [r, g, b];
+        }
+    </script>
+</body>
+</html>

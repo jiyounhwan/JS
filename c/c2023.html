@@ -52,9 +52,9 @@
     <div class = "middlebar"> 
         <nav class="middle__bar">          
             <ul class="middle__menu">
-                <li><a href="brand01.html">사료</a></li>
-                <li><a href="brand02.html">이동장</a></li>
-                <li><a href="brand03.html">하우스</a></li>             
+                <li><a href="">사료</a></li>
+                <li><a href="">이동장</a></li>
+                <li><a href="">하우스</a></li>             
              </ul>
         </nav>
     </div>
@@ -66,21 +66,27 @@
                     <td align="center"><img src="aa.png" width="120" height="150"><br>
                         용도: 영개용 사료<br>
                         가격 9000 원<br>
-                       
+                        <button onclick="addToCart('영개용 사료')">장바구니에 추가</button>
+                        <button onclick="buyNow('영개용 사료')">바로 구매</button>
+                        
                     </td>   
                     <td align="center"><img src="coldb.png" width="120" height="150"><br>
                         노인개 사료<br>
                         가격 : 10000 원<br>
-                       
+                        <button onclick="addToCart('노인개 사료')">장바구니에 추가</button>
+                        <button onclick="buyNow('노인개 사료')">바로 구매</button>
                     </td>
                     <td align="center"><img src="backsc.png" width="120" height="150"><br>
                         체중조절 사료<br>
-                        가격 : 10000 원
-                        
+                        가격 : 10000 원<br>
+                        <button onclick="addToCart('체중조절 사료')">장바구니에 추가</button>
+                        <button onclick="buyNow('체중조절 사료')">바로 구매</button>
                     </td>    
                     <td align="center"><img src="backcho.png" width="120" height="150"><br>
                         당노조절 사료<br>
                         가격 : 12000 원<br>
+                        <button onclick="addToCart('당노조절 사료')">장바구니에 추가</button>
+                        <button onclick="buyNow('당노조절 사료')">바로 구매</button>
                     </td>                                              
                 </tr><br>
         </table><br><br>    
@@ -91,22 +97,26 @@
                     <td align="center"><img src="aa.png" width="120" height="150"><br>
                         용도: 푸르미 이동장<br>
                         가격 22000 원<br>
+                        <button onclick="addToCart('푸르미 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('푸르미 이동장')">바로 구매</button>
                     </td>                     
-    
                     <td align="center"><img src="coldb.png" width="120" height="150"><br>
                         닥터펫 핑크 이동장<br>
                         가격 : 31500 원<br>
-                    </td>
-                               
-                             
+                        <button onclick="addToCart('닥터펫 핑크 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('닥터펫 핑크 이동장')">바로 구매</button>
+                    </td>                               
                     <td align="center"><img src="backsc.png" width="120" height="150"><br>
                         푸르미 그린 이동장<br>
                         가격 : 22000 원
-                    </td>            
-                                
+                        <button onclick="addToCart('푸르미 그린 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('푸르미 그린 이동장')">바로 구매</button>
+                    </td>                                
                     <td align="center"><img src="backcho.png" width="120" height="150"><br>
                         아이맥 이동장<br>
                         가격 : 12000 원<br>
+                        <button onclick="addToCart('아이맥 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('아이맥 이동장')">바로 구매</button>
                     </td>                                              
                 </tr>
             </table><br><br>
@@ -117,27 +127,32 @@
                     <td align="center"><img src="aa.png" width="120" height="150"><br>
                         용도: 푸르미 이동장<br>
                         가격 22000 원<br>
-                    </td>                           
-                                               
+                        <button onclick="addToCart('푸르미 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('푸르미 이동장')">바로 구매</button>
+                    </td>                            
                     <td align="center"><img src="coldb.png" width="120" height="150"><br>
                         닥터펫 핑크 이동장<br>
                         가격 : 31500 원<br>
-                    </td>                           
-                                             
+                        <button onclick="addToCart('닥터펫 핑크 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('닥터펫 핑크 이동장')">바로 구매</b utton>
+                    </td>                            
                     <td align="center"><img src="backsc.png" width="120" height="150"><br>
                         푸르미 그린 이동장<br>
                         가격 : 22000 원
+                        <button onclick="addToCart('푸르미 그린 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('푸르미 그린 이동장')">바로 구매</button>
                     </td>                            
-                                                
                     <td align="center"><img src="backcho.png" width="120" height="150"><br>
                         아이맥 이동장<br>
                         가격 : 12000 원<br>
+                        <button onclick="addToCart('아이맥 이동장')">장바구니에 추가</button>
+                        <button onclick="buyNow('아이맥 이동장')">바로 구매</button>
                     </td>                                                  
                 </tr>                
         </table> 
     </div>
    
-      <div class="endbar">
+    <div class="endbar">
         <nav class="end__bar">
             <ul class="end__menu">
                 <li>
@@ -172,60 +187,93 @@
         </nav>
     </div>
 
- <script>
-    const toggleBtn = document.querySelector(".navbar__toggleBtn");
-    const menu = document.querySelector(".navbar__menu");
-    const icons = document.querySelector(".navbar__icons");
-
-    toggleBtn.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    icons.classList.toggle("active");
-    });
-
-    var slideshow = document.getElementById('slideshow');
-    var images = slideshow.getElementsByTagName('img');
-    var prevButton = slideshow.querySelector('.prevButton');
-    var nextButton = slideshow.querySelector('.nextButton');
-    var currentIndex = 0;
-    // 초기 이미지 표시
+    <script>
+        const toggleBtn = document.querySelector(".navbar__toggleBtn");
+        const menu = document.querySelector(".navbar__menu");
+        const icons = document.querySelector(".navbar__icons");
+    
+        toggleBtn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        icons.classList.toggle("active");
+        });
+    
+        var slideshow = document.getElementById('slideshow');
+        var images = slideshow.getElementsByTagName('img');
+        var prevButton = slideshow.querySelector('.prevButton');
+        var nextButton = slideshow.querySelector('.nextButton');
+        var currentIndex = 0;
+        // 초기 이미지 표시
         showImage(currentIndex);
-    // 다음 이미지로 이동하는 함수
-    function nextImage() {
-        currentIndex++;
-        if (currentIndex >= images.length) {
-            currentIndex = 0;
+        // 다음 이미지로 이동하는 함수
+        function nextImage() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            showImage(currentIndex);
         }
-        showImage(currentIndex);
-    }
-    // 이전 이미지로 이동하는 함수
-    function prevImage() {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = images.length - 1;
+        // 이전 이미지로 이동하는 함수
+        function prevImage() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+            showImage(currentIndex);
         }
-        showImage(currentIndex);
-    }
-          
-    // 이미지를 표시하는 함수
-    function showImage(index) {
-        for (var i = 0; i < images.length; i++) {
-            images[i].style.opacity = '0';
-        }
+              
+        // 이미지를 표시하는 함수
+        function showImage(index) {
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.opacity = '0';
+            }
             images[index].style.opacity = '1';
-    }
-          
-    // 자동으로 다음 이미지로 이동
+        }
+              
+        // 자동으로 다음 이미지로 이동
         setInterval(nextImage, 3000);
               
-    // 오른쪽으로 이동하는 버튼에 이벤트 리스너 추가
-    nextButton.addEventListener('click', nextImage);
-          
-    // 왼쪽으로 이동하는 버튼에 이벤트 리스너 추가
-    prevButton.addEventListener('click', prevImage);
-
-    function changeScreen() {
-        window.location.href = "브랜드별사료";
-    }
+        // 오른쪽으로 이동하는 버튼에 이벤트 리스너 추가
+        nextButton.addEventListener('click', nextImage);
+              
+        // 왼쪽으로 이동하는 버튼에 이벤트 리스너 추가
+        prevButton.addEventListener('click', prevImage);
+    
+        function changeScreen() {
+            window.location.href = "brand01.html";
+        }
+    </script>
+    
+    <script>
+        // 장바구니에 상품 추가
+        function addToCart(item) {
+            // 장바구니에 상품 정보 추가
+            var cartItem = document.createElement("li");
+            cartItem.textContent = item;
+            document.getElementById("cart").appendChild(cartItem);
+            
+    
+            // 장바구니 아이템 수 업데이트
+            var itemCount = document.getElementById("item-count");
+            itemCount.textContent = parseInt(itemCount.textContent) + 1;
+        }
+    
+        // 바로 구매
+        function buyNow(item) {
+            alert(item + " 상품을 바로 구매합니다.");
+        }
+    
+        // 장바구니 비우기
+        function clearCart() {
+            // 장바구니 아이템 삭제
+            var cart = document.getElementById("cart");
+            while (cart.firstChild) {
+                cart.removeChild(cart.firstChild);
+            }
+    
+            // 장바구니 아이템 수 초기화
+            var itemCount = document.getElementById("item-count");
+            itemCount.textContent = "0";
+        }
     </script>
     
 </body>

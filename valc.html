@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <input type="text" id="display" readonly>
+        <br>
+        <button onclick="addToDisplay('1')">1</button>
+        <button onclick="addToDisplay('2')">2</button>
+        <button onclick="addToDisplay('3')">3</button>
+        <button onclick="addToDisplay('+')">+</button>
+        <br>
+        <button onclick="addToDisplay('4')">4</button>
+        <button onclick="addToDisplay('5')">5</button>
+        <button onclick="addToDisplay('6')">6</button>
+        <button onclick="addToDisplay('-')">-</button>
+        <br>
+        <button onclick="addToDisplay('7')">7</button>
+        <button onclick="addToDisplay('8')">8</button>
+        <button onclick="addToDisplay('9')">9</button>
+        <button onclick="addToDisplay('*')">*</button>
+        <br>
+        <button onclick="addToDisplay('0')">0</button>
+        <button onclick="addToDisplay('/')">/</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="clearDisplay()">C</button>
+    
+        <script>
+            let expression = '';
+    
+            function addToDisplay(value) {
+                const display = document.getElementById('display');
+                expression += value;
+                display.value = expression;
+            }
+    
+            function calculate() {
+                const display = document.getElementById('display');
+                try {
+                    const result = evaluateExpression(expression);
+                    display.value = result;
+                    expression = String(result);
+                } catch (error) {
+                    display.value = 'Error';
+                    expression = '';
+                }
+            }
+    
+            function clearDisplay() {
+                const display = document.getElementById('display');
+                display.value = '';
+                expression = '';
+            }
+    
+            function evaluateExpression(expression) {
+                // 사용자 정의 평가 함수로 계산식을 평가합니다.
+                // 여기서는 간단한 계산식을 평가하므로 정규식과 문자열 처리를 사용합니다.
+                // 복잡한 수식 계산을 위해서는 파싱과 평가를 수행하는 코드를 작성해야 합니다.
+    
+                // 정규식을 사용하여 숫자와 연산자를 추출합니다.
+                const numbers = expression.split(/[\+\-\*\/]/).map(Number);
+                const operators = expression.split(/\d+/).filter(Boolean);
+    
+                // 초기 값은 첫 번째 숫자로 설정합니다.
+                let result = numbers[0];
+    
+                // 숫자와 연산자를 반복하여 계산합니다.
+                for (let i = 0; i < operators.length; i++) {
+                    const operator = operators[i];
+                    const num = numbers[i + 1];
+                    switch (operator) {
+                        case '+':
+                            result += num;
+                            break;
+                        case '-':
+                            result -= num;
+                            break;
+                        case '*':
+                            result *= num;
+                            break;
+                        case '/':
+                            if (num === 0) {
+                                throw new Error('Division by zero is not allowed.');
+                            }
+                            result /= num;
+                            break;
+                        default:
+                            throw new Error('Invalid operator.');
+                    }
+                }
+    
+                return result;
+            }
+        </script>
+    </body>
+</body>
+</html>
